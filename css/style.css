@@ -7,7 +7,9 @@
 #navnt .navbar-nav .nav-item .nav-link {
     color: black;
 }
-.card-body{
-    background-color: rgb(255, 255, 255)
 
+
+#cardcont {
+    background: rgba(255, 255, 255, 0.432);
+    padding: 6px;
 }
