@@ -1,0 +1,13 @@
+#ldpg{
+    background-image: url("..//images/friends-eating-pizza.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+#navnt .navbar-nav .nav-item .nav-link {
+    color: black;
+}
+.card-body{
+    background-color: rgb(255, 255, 255)
+
+}
