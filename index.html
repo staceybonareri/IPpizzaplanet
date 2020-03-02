@@ -45,8 +45,8 @@
                 <div class="col-sm">PAYMENT OPTION</div>
             </div>
             <div class="card-body">
-                <form action="#" class="form-horizontal">
-                    <section class="ordersection" hidden>
+                <form action="#" class="form-horizontal" id="orderform">
+                    <section class="ordersection" >
                         <div class="form-group">
                             <label for="crust">Type Of Crust</label>
                             <select name="" id="crust" class="form-control">
@@ -58,7 +58,7 @@
                         </div>
                         <div class="form-group">
                             <label for="toppings">Toppings..</label>
-                            <select name="" id="toppings.." class="form-control">
+                            <select name="" id="toppings" class="form-control">
                                 <option value="Extra Cheese">Extra-cheese</option>
                                 <option value="Ham and Cheese">Ham and cheese</option>
                                 <option value="Bacon">Bacon</option>
@@ -71,7 +71,7 @@
                         </div>
                         <div class="form-group">
                             <label for="Sauces..">Sauces..</label>
-                            <select name="" id="Sauces.." class="form-control">
+                            <select name="" id="sauces" class="form-control">
                                 <option value="BBQ Sauce">BBQ sauce</option>
                                 <option value="Ketchup">Ketchup</option>
                                 <option value="Salsa">Salsa</option>
@@ -81,7 +81,7 @@
                         </div>
                         <div class="form-group">
                             <label for="Accompaniments">Accompaniments..</label>
-                            <select name="" id="Accompaniments.." class="form-control">
+                            <select name="" id="accompaniments" class="form-control">
                                 <option value="Soft Drink">Soft-Drink</option>
                                 <option value="Dasani Water">Dasani Water</option>
                                 <option value="Soda Water">Soda Water</option>
@@ -91,7 +91,7 @@
                         </div> 
                         <div class="form-group">
                             <label for="Kind of Pizza">Kind of Pizza..</label>
-                            <select name="" id="KInd of  Pizza.." class="form-control">
+                            <select name="" id="KindofPizza" class="form-control">
                                 <option value="Something Meaty">Something Meaty</option>
                                 <option value="BBQ Chicken">BBQ Chicken</option>
                                 <option value="Magherita">Magherita</option>
@@ -105,11 +105,18 @@
                             </select>
                         </div> 
                         <div class="form-group row justify-content-center align-items-center">
-                            <input type="submit" value="Next" class="btn btn-success" dislay flex>
                         </div>
+                        <div class="form-group">
+                            <label for="Size">Size</label>
+                            <select name="" id="sizepizza" class="form-control">
+                                <option value="Small">Small</option>
+                                <option value="Medium">Medium</option>
+                                <option value="Large">Large</option>
+                            </select>
+                        </div> 
                     </section>
 
-                    <section class="delivery" hidden>
+                    <section class="delivery" >
                         <h3>DELIVERY DETAILS</h3>
                         <h4>Select your preferred method for this order</h4>
                         <div class="form-group">
@@ -124,12 +131,12 @@
                             </label>
                             <br>
                             <div class="form-group row justify-content-center align-items-center">
-                                <input type="submit" value="Proceed to Payment" class="btn btn-success" dislay flex>
+                                <input type="submit" value="Proceed to Payment" class="btn btn-success">
     
                             </div>
                         </div>
                     </section>
-                    <section class="payment option" hidden>
+                    <section class="payment option" >
                         <h5>PAYMENT METHOD</h5>
                         <h6>Select your mode of payment</h6>
                         <div class="form-group">
