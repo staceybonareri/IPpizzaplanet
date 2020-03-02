@@ -42,11 +42,11 @@
             <div class="row card-head">
                 <div class="col-sm">ORDER</div>
                 <div class="col-sm">DELIVERY</div>
-                <div class="col-sm">PAYMENT OPTION</div>
+                <div class="col-sm">CHECK OUT</div>
             </div>
             <div class="card-body">
                 <form action="#" class="form-horizontal" id="orderform">
-                    <section class="ordersection" >
+                    <section class="ordersection set active" >
                         <div class="form-group">
                             <label for="crust">Type Of Crust</label>
                             <select name="" id="crust" class="form-control">
@@ -66,7 +66,6 @@
                                 <option value="Blue-cheese">Blue-cheese</option>
                                 <option value="Mushrooms">Mushrooms</option>
                                 <option value="Sauasage">Sausage</option>
-                                <option value="Extra Cheese">Extra-cheese</option>
                             </select>
                         </div>
                         <div class="form-group">
@@ -116,42 +115,42 @@
                         </div> 
                     </section>
 
-                    <section class="delivery" >
+                    <section class="delivery set" >
                         <h3>DELIVERY DETAILS</h3>
                         <h4>Select your preferred method for this order</h4>
                         <div class="form-group">
                             <label>
-                                <input type="radio" value="" name="delivery">Delivery
-                                <input type="text" class="form-control m-1" placeholder="name">
-                                <input type="text" class="form-control m-1" placeholder="location">
-                                <input type="text" class="form-control m-1"placeholder="house no.">
+                                <input type="radio" value="yes" name="delivery">Delivery
+                                <input type="text" name="userName" class="form-control m-1" placeholder="name">
+                                <input type="text" name="Area" class="form-control m-1" placeholder="location">
+                                <input type="text" name="HseNo" class="form-control m-1"placeholder="house no.">
                             </label>   <br>
                             <label>
-                                <input type="radio" value="" name="delivery">Carry Out
+                                <input type="radio" value="no" name="delivery">Carry Out
                             </label>
                             <br>
                             <div class="form-group row justify-content-center align-items-center">
-                                <input type="submit" value="Proceed to Payment" class="btn btn-success">
+                                <input type="submit" value="Proceed to Payment" class="btn btn-success" hidden>
     
                             </div>
                         </div>
                     </section>
-                    <section class="payment option" >
-                        <h5>PAYMENT METHOD</h5>
-                        <h6>Select your mode of payment</h6>
-                        <div class="form-group">
-                            <label>
-                                <input type="radio" value="" name="Mpesa">Mpesa
-                                <input type="radio" value="" name="Mpesa">Visa
-                            </label>
-                            <div class="form-group row justify-content-center align-items-center">
-                                <input type="submit" value="Make Payment" class="btn btn-success" display flex>
+                    <section class="check-out set">
+                        <h3>YOUR ITEMS</h3>
+                        <ul class="items">
 
-                            </div>
+                        </ul>
+                        <div class="form-group">
 
                         </div>
 
                     </section>
+                    <div class="row justify-content-center">
+                        <div class="form-group">
+                            <input type="button" value="BACK" class="btn btn-danger" name="back">
+                            <input type="button" value="NEXT" class="btn btn-primary" name="next">
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>

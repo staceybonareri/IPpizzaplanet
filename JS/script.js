@@ -57,18 +57,18 @@ var getCrust = function(){
 
 var getAccompaniments = function(){
     var a = $("select#accompaniments option:selected").val();
-    if(a =="Soft-Drink"){accompaniments= softDrink}else
+    if(a =="Soft Drink"){accompaniments= softDrink}else
     if(a =="Dasani Water"){accompaniments= dasaniWater}else
-    if(a =="Soda Water"){accompaniments= sodaWater}pelse
+    if(a =="Soda Water"){accompaniments= sodaWater}else
     if(a =="Energy Drinks"){accompaniments= energyDrinks}else
     if(a =="Juices"){accompaniments= juices}
-    console.log(accommpaniments);
+    console.log(accompaniments);
     return accompaniments; 
 }  
 
 var getPizza= function(){
     var p= $("select#KindofPizza option:selected").val();
-    if(p == "Something Meaty"){pizz= somethingMeaty}else
+    if(p == "Something Meaty"){pizza= somethingMeaty}else
     if(p =="BBQ Chicken"){pizza= bbqChicken}else
     if(p =="magherita"){pizza= magherita}else
     if(p =="Chicken Tikka"){pizza= chickenTikka}else
@@ -82,10 +82,39 @@ var getPizza= function(){
     return pizza;
 
 }
+var totalPrice = function(topping, size, crust, pizza, accompaniments, sauce, delivery){
+    this.totals= topping+size+crust+pizza+accompaniments+sauce+delivery
+};
+
+var getDelivery=function(){
+    var d= $("input[type=radio][name=delivery]:checked").val();
+    if(d== "yes"){
+        var name=$("input[type=text][name=userName]").val();
+        var location=$("input[type=text][name=Area]").val();
+        var houseno=$("input[type=text][name=HseNo]").val();
+        var address={name:name, location:location, houseno:houseno, cost:200}
+    }else{
+        var address={name:"name N/A", location:"location N/A", houseno:"houseno N/A", cost:0}
+    }
+    return address
+}
+
+
+
 
 $(document).ready(function(){
-    $("#orderform").submit(function(e){
-        e.preventDefault();
+    $("input[type=button][name=next]").click(function(){
+        $("form").find(".set.active").next().addClass("active");
+        $("form").find(".set.active").prev().removeClass("active");
+    });
+    $("input[type=button][name=back]").click(function(){
+        $("form").find(".set.active").prev().addClass("active");
+        $("form").find(".set.active").next().removeClass("active");
+    });
+
+
+
+    $("input[type=button][name=next]").click(function(){
         //variables
         var sizePrice= getSize().price;
         var sizeName= getSize().name;
@@ -97,11 +126,24 @@ $(document).ready(function(){
         var pizzaName= getPizza().name;
         var toppingPrice= toppings.price;
         var toppingName= toppings.name;
-        var saucePrice= sauce.price;
-        var sauceName= sauce.name;
+        var saucePrice= sauces.price;
+        var sauceName= sauces.name;
+        var deliveryPrice=getDelivery().cost;
+        var total = new totalPrice(toppingPrice, sizePrice, crustPrice, pizzaPrice, accompanimentsPrice, saucePrice, deliveryPrice);
+        var totalCost=total.totals
 
-
-
+        var items = "<li>"+sizeName+ ": "+ sizePrice+"</li>"+
+                    "<li>"+crustName+ ": "+ crustPrice+"</li>"+
+                    "<li>"+accompanimentsName+ ": "+ accompanimentsPrice+"</li>"+
+                    "<li>"+pizzaName+ ": "+ pizzaPrice+"</li>"+
+                    "<li>"+toppingName+ ": "+ toppingPrice+"</li>"+
+                    "<li>"+sauceName+ ": "+ saucePrice+"</li>"+
+                    "<li>Delivery: "+ deliveryPrice+"</li>"+
+                    "<li>Delivery Address => "+ getDelivery().name+", "+getDelivery().location+", "+getDelivery().houseno+"</li>"+
+                    "<h3> Cost:"+totalCost+"</h3>";
+        
+                    $(".items").html(items);
+        console.log (totalCost);
 
     });
 
