@@ -4,7 +4,7 @@
 
 
 ## ABOUT PROJECT
-*This project is based on the content relating to javascript and jquery. it entails creating a website known as Delani Studio that captures every aspect of the lesson covered during this week.
+*This project is based on this week's content relating to javascript and jquery. it entails creating a website for a pizza projectthat captures how the user can make as many orders and calculate the price total of the pizza orders.
 
 ## CONTRIBUTING
 *Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
@@ -18,4 +18,4 @@
 Stacey Lorraine Bonareri
 
 ## LIVE PAGE
-[Open Live Page]( https://staceybonareri.github.io/DELANISTUDIOWK3/)
+[Open Live Page](https://staceybonareri.github.io/pizzaplanet/.)
